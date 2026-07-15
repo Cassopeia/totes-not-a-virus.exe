@@ -1,1 +1,87 @@
+body {
+    background-color: black;
+    color: #00ff41;
+    font-family: "Courier New", monospace;
+    height: 100vh;
+    margin: 0;
 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    overflow: hidden;
+}
+
+
+#terminal {
+
+    width: 80%;
+    font-size: 24px;
+    text-shadow:
+        0 0 5px #00ff41,
+        0 0 10px #00ff41;
+
+}
+
+
+/* Fake CRT scan lines */
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+    inset: 0;
+
+    background:
+    repeating-linear-gradient(
+        0deg,
+        rgba(0,0,0,0.15),
+        rgba(0,0,0,0.15) 2px,
+        transparent 2px,
+        transparent 4px
+    );
+
+    pointer-events:none;
+
+}
+
+
+#cursor {
+
+    animation: blink 1s infinite;
+
+}
+
+
+@keyframes blink {
+
+    50% {
+        opacity:0;
+    }
+
+}
+
+
+#nameInput {
+
+    background:black;
+    border:none;
+    outline:none;
+
+    color:#00ff41;
+
+    font-family:"Courier New", monospace;
+
+    font-size:24px;
+
+    width:200px;
+
+}
+
+
+#response {
+
+    margin-top:30px;
+
+}
